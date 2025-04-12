@@ -8,12 +8,7 @@ export function getPreviewCode(HTML,CSS,JS) {
               padding: 0;
               box-sizing: border-box;
             }
-            body {
-              color: white;
-              // background-color: #1E1E1E;
-              // background-color:white;
-              // background-color: #;
-            }
+           
             </style>
           </head>
           <body>
