@@ -20,6 +20,8 @@ function App() {
   const [activeTab, setActiveTab] = useState("HTML");
 
   const [loading ,setLoading] = useState(true)
+  const [editorFullScreen, setEditorFullScreen] = useState(false)
+  const [previewFullScreen, setPreviewFullScreen] = useState(false)
 
   const PreviewCode = getPreviewCode(HTML, CSS, JS);
 
@@ -72,17 +74,17 @@ function App() {
       <Header theme={theme} setTheme={setTheme} BoilerPlateCode={BoilerPlateCode} CSS={CSS} JS={JS}/>
 
       <div className="p-4 flex flex-col md:flex-row gap-4 h-[calc(100vh_-_72px)]">
-        <div className="flex-1 light-theme-color flex flex-col border-2 border-transparent bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        {!previewFullScreen && <div title="Editor" className="flex-1 light-theme-color flex flex-col border-2 border-transparent bg-gray-800 rounded-lg shadow-lg overflow-hidden">
           {/* Tabs */}
-          <EditorTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+          <EditorTabs activeTab={activeTab} setActiveTab={setActiveTab} editorFullScreen={editorFullScreen} setEditorFullScreen={setEditorFullScreen} />
 
           {/* Editor */}
           <EditorComponent editorProps={editorProps} theme={theme} />
 
-        </div>
+        </div>}
 
         {/* Preview */}
-        <Preview PreviewCode={PreviewCode} />
+        {!editorFullScreen && <Preview PreviewCode={PreviewCode} previewFullScreen={previewFullScreen} setPreviewFullScreen={setPreviewFullScreen}/>}
       </div>
     </div>
     </>

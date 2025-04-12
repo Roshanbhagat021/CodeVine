@@ -11,12 +11,6 @@ const LoadingScreen = () => {
       Loading your magical world....
     </p>
   </div>
-  
-
-  
-  
-
-
   );
 };
 

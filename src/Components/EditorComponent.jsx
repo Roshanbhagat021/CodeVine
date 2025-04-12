@@ -2,8 +2,6 @@ import { Editor } from "@monaco-editor/react";
 import React from "react";
 
 function EditorComponent({editorProps,theme}) {
-  console.log('editorProps: ', editorProps);
-  console.log('theme: ', theme);
   return (
     <Editor
       defaultLanguage={editorProps.language}
