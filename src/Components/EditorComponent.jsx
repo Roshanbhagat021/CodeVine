@@ -1,13 +1,15 @@
 import { Editor } from "@monaco-editor/react";
 import React from "react";
 
-function EditorComponent({editorProps}) {
+function EditorComponent({editorProps,theme}) {
+  console.log('editorProps: ', editorProps);
+  console.log('theme: ', theme);
   return (
     <Editor
       defaultLanguage={editorProps.language}
       value={editorProps.value}
       onChange={editorProps.onChange}
-      theme="vs-dark"
+      theme={theme=="light"?"vs-dark":""}
       options={{
         wordWrap: "on",
         minimap: { enabled: false },

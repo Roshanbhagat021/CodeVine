@@ -10,7 +10,9 @@ export function getPreviewCode(HTML,CSS,JS) {
             }
             body {
               color: white;
-              background-color: #1E1E1E;
+              // background-color: #1E1E1E;
+              // background-color:white;
+              // background-color: #;
             }
             </style>
           </head>
