@@ -14,7 +14,7 @@ import LoadingScreen from "./Components/Loading";
 
 
 function App() {
-  const [HTML, SetHTML] = useLocalStorage("HTML", '<!-- <div class="loader">hi</div> -->');
+  const [HTML, SetHTML] = useLocalStorage("HTML", '<!-- <div>Start coding ....</div> -->');
   const [CSS, SetCSS] = useLocalStorage("CSS", "");
   const [JS, SetJS] = useLocalStorage("JS", "");
   const [activeTab, setActiveTab] = useState("HTML");
@@ -23,9 +23,9 @@ function App() {
   const [editorFullScreen, setEditorFullScreen] = useState(false)
   const [previewFullScreen, setPreviewFullScreen] = useState(false)
 
-  const PreviewCode = getPreviewCode(HTML, CSS, JS);
-
   const [theme, setTheme] = useState("light");
+  const PreviewCode = getPreviewCode(HTML, CSS, JS,theme);
+
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -33,13 +33,8 @@ function App() {
       setTheme(storedTheme);
       document.documentElement.classList.add(storedTheme);
     } else {
-      const prefersDarkScheme = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      );
-      if (prefersDarkScheme.matches) {
-        setTheme("dark");
-        document.documentElement.classList.add("dark");
-      }
+      setTheme("dark")
+      document.documentElement.classList.add("dark");
     }
 
     const timer = setTimeout(() => {
@@ -84,7 +79,7 @@ function App() {
         </div>}
 
         {/* Preview */}
-        {!editorFullScreen && <Preview PreviewCode={PreviewCode} previewFullScreen={previewFullScreen} setPreviewFullScreen={setPreviewFullScreen}/>}
+        {!editorFullScreen && <Preview theme={theme} PreviewCode={PreviewCode} previewFullScreen={previewFullScreen} setPreviewFullScreen={setPreviewFullScreen}/>}
       </div>
     </div>
     </>

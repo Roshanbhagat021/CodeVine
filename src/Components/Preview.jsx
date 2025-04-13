@@ -2,7 +2,7 @@ import React from "react";
 import fullScreen from "../assets/fullScreenIcon.png";
 import smallScreen from "../assets/smallScreenIcon.png";
 
-function Preview({ PreviewCode, setPreviewFullScreen, previewFullScreen }) {
+function Preview({ PreviewCode, setPreviewFullScreen, previewFullScreen,theme }) {
   return (
     <div className="light-theme-color flex-1  overflow-hidden bg-gray-800 rounded-lg ">
       <div className="flex items-center px-4 py-2 justify-between">
@@ -26,7 +26,7 @@ function Preview({ PreviewCode, setPreviewFullScreen, previewFullScreen }) {
         srcDoc={PreviewCode}
         title="Preview"
         sandbox="allow-scripts"
-        className="w-full h-[90vh] light-theme bg-[#1E1E1E] shadow-xl resize-y"
+        className={` w-full h-[calc(100vh-120px)] light-theme bg-[#1E1E1E] shadow-xl`}
       ></iframe>
     </div>
   );

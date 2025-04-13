@@ -33,8 +33,15 @@
       background-color: white;
     }
 
+  
+
   }
 
+  iframe.light{
+    .light-theme{
+      background-color: white;
+    }
+  }
 
   @keyframes bounceScaleFast {
   0%, 100% {

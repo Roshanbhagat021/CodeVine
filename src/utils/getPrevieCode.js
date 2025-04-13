@@ -1,4 +1,4 @@
-export function getPreviewCode(HTML,CSS,JS) {
+export function getPreviewCode(HTML,CSS,JS, theme) {
   return `<html>
           <head>
             <style>
@@ -8,10 +8,15 @@ export function getPreviewCode(HTML,CSS,JS) {
               padding: 0;
               box-sizing: border-box;
             }
-           
+
+            body{
+            ${theme == "light"? "color:white": "color:dark"}
+            
+            }
+
             </style>
           </head>
-          <body>
+          <body class="preview-body">
             ${HTML}
             <script>
             ${JS}
