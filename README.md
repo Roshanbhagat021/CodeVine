@@ -27,7 +27,17 @@ This is Basic <b>Code Editor</b> where you can create some small coding projects
   - Jszip 
 
 
+# Setup Instructions
+  ## Prerequisites
+  1. Install Node.js and nmp.
   
+
+  ## Clone the Repository
+  ```bash
+  git clone https://github.com/Roshanbhagat021/CodeVine.git
+  cd CodeVine
+  
+  ```
 
 
 
