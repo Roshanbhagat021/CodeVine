@@ -6,7 +6,7 @@ This is Basic <b>Code Editor</b> where you can create some small coding projects
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
 3. [Setup Instructions](#Setup-instructions)
-4. [Future Enhancements](#future-inhancements)
+4. [Future Enhancements](#future-enhancements)
 
 
 
@@ -28,7 +28,7 @@ This is Basic <b>Code Editor</b> where you can create some small coding projects
 
 
 # Setup Instructions
-  ## Prerequisites
+   <h2 style="border:none;">Prerequisites</h2>
 1. Install [Node.js](https://nodejs.org/en) and npm.
   
 
@@ -44,6 +44,12 @@ This is Basic <b>Code Editor</b> where you can create some small coding projects
 
   - <b>Real-time Collaborative Editing</b>
      Adding a collaborative feature where multiple users can edit code together in real time, view changes live, and work seamlessly as a team
+
+
+# Have a Look
+<img src="./src/assets/Layout-light.png" alt="desktop view" >
+<hr>
+<img src="./src/assets/Layout-dark.png" alt="desktop view" >
 
 
  
