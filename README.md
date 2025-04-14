@@ -15,7 +15,19 @@ This is Basic <b>Code Editor</b> where you can create some small coding projects
 - Instant preview of your code 
 - Code download feature
 - Dark Mode (Enabled)
-- Responsive UI
+- Responsive UI (along with beautiful loading animation)
+
+# Technologies Used
+- ## Frontend
+  - React
+  - Tailwind css
+
+- ## Library
+  - Monaco editor
+  - Jszip 
+
+
+  
 
 
 
