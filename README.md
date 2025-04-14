@@ -29,15 +29,24 @@ This is Basic <b>Code Editor</b> where you can create some small coding projects
 
 # Setup Instructions
   ## Prerequisites
-  1. Install Node.js and nmp.
+1. Install [Node.js](https://nodejs.org/en) and npm.
   
 
   ## Clone the Repository
   ```bash
   git clone https://github.com/Roshanbhagat021/CodeVine.git
   cd CodeVine
-  
   ```
+
+# Future Enhancements
+  - <b>Backend Integration for Code Storage</b>
+    Implementing a secure backend system that allows users to save, retrieve, and manage their code online — making their projects accessible from anywhere.
+
+  - <b>Real-time Collaborative Editing</b>
+     Adding a collaborative feature where multiple users can edit code together in real time, view changes live, and work seamlessly as a team
+
+
+ 
 
 
 
