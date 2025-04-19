@@ -1,4 +1,10 @@
-export function getPreviewCode(HTML,CSS,JS, theme) {
+import { useContext } from "react";
+import { themeContext } from "../Contexts/themeContext";
+
+export function getPreviewCode(HTML,CSS,JS) {
+
+  const [theme] =useContext(themeContext)
+  
   return `<html>
           <head>
             <style>

@@ -1,7 +1,11 @@
 import { Editor } from "@monaco-editor/react";
-import React from "react";
+import React, { useContext } from "react";
+import { themeContext } from "../Contexts/themeContext";
 
-function EditorComponent({editorProps,theme}) {
+function EditorComponent({editorProps}) {
+  
+  const [theme ]= useContext(themeContext)
+
   return (
     <Editor
       defaultLanguage={editorProps.language}

@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { themeContext } from '../Contexts/themeContext';
 
-const ModeSwitcher = ({theme,setTheme}) => {
+const ModeSwitcher = () => {
   
+  const [theme,setTheme] = useContext(themeContext)
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';

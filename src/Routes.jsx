@@ -1,10 +1,11 @@
 import App from "./App.jsx";
 import PageNotFound from './Components/PageNotFound.jsx';
+import { ThemeProvider } from "./Contexts/themeContext.jsx";
 
 const routes = [
   {
     path: '/',
-    element: <App />,
+    element: <ThemeProvider><App /></ThemeProvider>
   },
   {
     path: '*',

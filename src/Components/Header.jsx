@@ -2,7 +2,9 @@ import React from "react";
 import ModeSwitcher from "./ModeSwithcher";
 import DownloadCode from "./DownloadCode";
 
-function Header({ theme, setTheme,BoilerPlateCode,CSS,JS }) {
+function Header({ BoilerPlateCode,CSS,JS }) {
+
+
   return (
     <header className="flex flex-wrap sticky top-0 z-10 justify-between items-center bg-gradient-to-r from-indigo-700 to-purple-800 text-white p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-b">
       {/* Logo */}
@@ -12,7 +14,7 @@ function Header({ theme, setTheme,BoilerPlateCode,CSS,JS }) {
 
       <div className="flex items-center gap-3 flex-wrap w-full justify-center md:w-auto md:justify-end">
         <DownloadCode BoilerPlateCode={BoilerPlateCode} CSS={CSS} JS={JS} />
-        <ModeSwitcher theme={theme} setTheme={setTheme} />
+        <ModeSwitcher />
       </div>
     </header>
   );

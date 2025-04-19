@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import useLocalStorage from "./Hooks/LocalStorageHook";
 import Header from "./Components/Header";
@@ -10,10 +10,10 @@ import { getPreviewCode } from "./utils/getPrevieCode";
 
 import { hmtlBoilerplate } from "./utils/htmlBoilerplate";
 import LoadingScreen from "./Components/Loading";
-
-
+import { themeContext } from "./Contexts/themeContext";
 
 function App() {
+
   const [HTML, SetHTML] = useLocalStorage("HTML", '<!-- <div>Start coding ....</div> -->');
   const [CSS, SetCSS] = useLocalStorage("CSS", "");
   const [JS, SetJS] = useLocalStorage("JS", "");
@@ -23,8 +23,8 @@ function App() {
   const [editorFullScreen, setEditorFullScreen] = useState(false)
   const [previewFullScreen, setPreviewFullScreen] = useState(false)
 
-  const [theme, setTheme] = useState("light");
-  const PreviewCode = getPreviewCode(HTML, CSS, JS,theme);
+  const [theme, setTheme] = useContext(themeContext)
+  const PreviewCode = getPreviewCode(HTML, CSS, JS);
 
 
   useEffect(() => {
@@ -56,10 +56,10 @@ function App() {
 
  const BoilerPlateCode =hmtlBoilerplate(HTML)
 
-
-
  if(loading) return <LoadingScreen/>
+
  
+
 
   return (
     <>
@@ -74,12 +74,12 @@ function App() {
           <EditorTabs activeTab={activeTab} setActiveTab={setActiveTab} editorFullScreen={editorFullScreen} setEditorFullScreen={setEditorFullScreen} />
 
           {/* Editor */}
-          <EditorComponent editorProps={editorProps} theme={theme} />
+          <EditorComponent editorProps={editorProps} />
 
         </div>}
 
         {/* Preview */}
-        {!editorFullScreen && <Preview theme={theme} PreviewCode={PreviewCode} previewFullScreen={previewFullScreen} setPreviewFullScreen={setPreviewFullScreen}/>}
+        {!editorFullScreen && <Preview PreviewCode={PreviewCode} previewFullScreen={previewFullScreen} setPreviewFullScreen={setPreviewFullScreen}/>}
       </div>
     </div>
     </>
